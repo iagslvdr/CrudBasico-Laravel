@@ -1,23 +1,23 @@
 @extends('layout')
 
 @section('titulo')
-    Clientes
+   CRUD de Clientes
 @endsection
 
 @section('conteudo')
-    <a href="{{ route('clientes.create') }}">Novo Cliente</a>
-    <br/><br/>
+    <a href="{{ route('clientes.create') }}" class="btn btn-primary mb-3">Novo Cliente</a>
 
-    <table>
-        <thead>
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
             <tr>
-                <td>Id</td>
-                <td>Nome</td>
-                <td>Telefone</td>
-                <td>Rua</td>
-                <td>Bairro</td>
-                <td>Cidade</td>
-                <td>Estado</td>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Rua</th>
+                <th scope="col">Bairro</th>
+                <th scope="col">Cidade</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -31,12 +31,12 @@
                     <td>{{$cliente->Cidade}}</td>
                     <td>{{$cliente->Estado}}</td>
                     <td>
-                        <a href="{{ route('clientes.edit', $cliente->Id) }}">Editar</a>
+                        <a href="{{ route('clientes.edit', $cliente->Id) }}" class="btn btn-warning btn-sm">Editar</a>
 
-                        <form action="{{ route('clientes.destroy', $cliente->Id) }}" method="post">
+                        <form action="{{ route('clientes.destroy', $cliente->Id) }}" method="post" style="display:inline-block;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit">Excluir</button>
+                            <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
                         </form>
                     </td>
                 </tr>

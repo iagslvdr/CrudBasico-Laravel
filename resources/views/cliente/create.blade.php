@@ -1,4 +1,6 @@
-@extends('layout')
+@extends(
+    'layout'
+)
 
 @section('titulo')
     Novo cliente
@@ -8,31 +10,39 @@
 
     <form method="post" name="cliente" id="cliente" action="{{ route('clientes.store') }}">
         @csrf
-        <label>Nome do cliente</label>
-        <input type="text" name="nome" id="nome"/>
-        <br/><br/>
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome do cliente</label>
+            <input type="text" class="form-control" name="nome" id="nome" required />
+        </div>
 
-        <label>Telefone</label>
-        <input type="text" name="telefone" id="telefone"/>
-        <br/><br/>
+        <div class="mb-3">
+            <label for="telefone" class="form-label">Telefone</label>
+            <input type="text" class="form-control" name="telefone" id="telefone" />
+        </div>
 
-        <label>Rua</label>
-        <input type="text" name="rua" id="rua"/>
-        <br/><br/>
+        <div class="mb-3">
+            <label for="rua" class="form-label">Rua</label>
+            <input type="text" class="form-control" name="rua" id="rua" />
+        </div>
 
-        <label>Bairro</label>
-        <input type="text" name="bairro" id="bairro"/>
-        <br/><br/>
+        <div class="mb-3">
+            <label for="bairro" class="form-label">Bairro</label>
+            <input type="text" class="form-control" name="bairro" id="bairro" />
+        </div>
 
-        <label>Cidade</label>
-        <input type="text" name="cidade" id="cidade"/>
-        <br/><br/>
+        <div class="mb-3">
+            <label for="cidade" class="form-label">Cidade</label>
+            <input type="text" class="form-control" name="cidade" id="cidade" />
+        </div>
 
-        <label>Estado</label>
-        <input type="text" name="estado" id="estado"/>
-        <br/><br/>
+        <div class="mb-3">
+            <label for="estado" class="form-label">Estado</label>
+            <input type="text" class="form-control" name="estado" id="estado" />
+        </div>
 
-        <button type="submit">Salvar</button>
+        <button type="submit" class="btn btn-success">Salvar</button>
+        <a href="{{ route('clientes.index') }}" class="btn btn-secondary">Voltar</a>
     </form>
 
 @endsection
+

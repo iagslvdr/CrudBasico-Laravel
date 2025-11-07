@@ -1,7 +1,9 @@
-@extends('layout')
+@extends(
+    'layout'
+)
 
 @section('titulo')
-    Novo cliente
+    Editar cliente
 @endsection
 
 @section('conteudo')
@@ -9,31 +11,38 @@
     <form method="post" name="cliente" id="cliente" action="{{ route('clientes.update', $cliente->Id) }}">
         {{ method_field('PATCH') }}
         @csrf
-        <label>Nome do cliente</label>
-        <input type="text" value="{{ $cliente->Nome }}" name="nome" id="nome"/>
-        <br/><br/>
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome do cliente</label>
+            <input type="text" class="form-control" value="{{ $cliente->Nome }}" name="nome" id="nome" required />
+        </div>
 
-        <label>Telefone</label>
-        <input type="text" value="{{ $cliente->Telefone }}" name="telefone" id="telefone"/>
-        <br/><br/>
+        <div class="mb-3">
+            <label for="telefone" class="form-label">Telefone</label>
+            <input type="text" class="form-control" value="{{ $cliente->Telefone }}" name="telefone" id="telefone" />
+        </div>
 
-        <label>Rua</label>
-        <input type="text" value="{{ $cliente->Rua }}" name="rua" id="rua"/>
-        <br/><br/>
+        <div class="mb-3">
+            <label for="rua" class="form-label">Rua</label>
+            <input type="text" class="form-control" value="{{ $cliente->Rua }}" name="rua" id="rua" />
+        </div>
 
-        <label>Bairro</label>
-        <input type="text" value="{{ $cliente->Bairro }}" name="bairro" id="bairro"/>
-        <br/><br/>
+        <div class="mb-3">
+            <label for="bairro" class="form-label">Bairro</label>
+            <input type="text" class="form-control" value="{{ $cliente->Bairro }}" name="bairro" id="bairro" />
+        </div>
 
-        <label>Cidade</label>
-        <input type="text" value="{{ $cliente->Cidade }}" name="cidade" id="cidade"/>
-        <br/><br/>
+        <div class="mb-3">
+            <label for="cidade" class="form-label">Cidade</label>
+            <input type="text" class="form-control" value="{{ $cliente->Cidade }}" name="cidade" id="cidade" />
+        </div>
 
-        <label>Estado</label>
-        <input type="text" value="{{ $cliente->Estado }}" name="estado" id="estado"/>
-        <br/><br/>
+        <div class="mb-3">
+            <label for="estado" class="form-label">Estado</label>
+            <input type="text" class="form-control" value="{{ $cliente->Estado }}" name="estado" id="estado" />
+        </div>
 
-        <button type="submit">Salvar</button>
+        <button type="submit" class="btn btn-success">Salvar</button>
+        <a href="{{ route('clientes.index') }}" class="btn btn-secondary">Voltar</a>
     </form>
 
 @endsection

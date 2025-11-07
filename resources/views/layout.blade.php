@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unifebe | @yield('titulo')</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    
-    <h1>@yield('titulo')</h1>
+    <div class="container mt-4">
+        <h1 class="mb-4">@yield('titulo')</h1>
 
-    <!-- Conteúdo -->
-    @yield('conteudo')
-    <!-- Fim Conteúdo -->
+        @yield('conteudo')
+    </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
